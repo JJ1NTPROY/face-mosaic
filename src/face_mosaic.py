@@ -18,9 +18,16 @@ while True:
     # 인식된 얼굴 갯수를 출력
     print(len(faces))
 
-    # 인식된 얼굴에 사각형을 출력한다
+    # 인식된 얼굴에 약한 모자이크를 적용한다
     for (x, y, w, h) in faces:
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        # 얼굴 부분을 추출
+        face_roi = frame[y:y+h, x:x+w]
+
+        # 약한 모자이크를 위해 큰 값으로 설정
+        face_roi = cv2.resize(face_roi, (0, 0), fx=0.08, fy=0.08)  # 얼굴 부분 축소
+        face_roi = cv2.resize(face_roi, (w, h), interpolation=cv2.INTER_LINEAR)  # 원래 크기로 확대
+
+        frame[y:y+h, x:x+w] = face_roi
 
     # 화면에 출력한다
     cv2.imshow('frame', frame)
