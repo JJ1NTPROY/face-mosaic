@@ -23,8 +23,8 @@ def detect_and_mosaic_faces(image_path):
 
 if __name__ == "__main__":
     # 이미지 경로 설정
-    input_image_path = "data/input/image.jpg"
-    output_image_path = "data/output/image_mosaic.jpg"
+    input_image_path = 'photo.jpg'
+    output_image_path = 'mosaic pic.jpg'
 
     # 얼굴 감지 및 모자이크 처리
     result_image = detect_and_mosaic_faces(input_image_path)
