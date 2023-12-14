@@ -18,21 +18,23 @@ while True:
     # 인식된 얼굴 갯수를 출력
     print(len(faces))
 
-    # 인식된 얼굴에 약한 모자이크를 적용한다
     for (x, y, w, h) in faces:
-        # 얼굴 부분을 추출
-        face_roi = frame[y:y+h, x:x+w]
-
-        # 약한 모자이크를 위해 큰 값으로 설정
-        face_roi = cv2.resize(face_roi, (0, 0), fx=0.08, fy=0.08)  # 얼굴 부분 축소
-        face_roi = cv2.resize(face_roi, (w, h), interpolation=cv2.INTER_LINEAR)  # 원래 크기로 확대
-
-        frame[y:y+h, x:x+w] = face_roi
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
     # 화면에 출력한다
     cv2.imshow('frame', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(50) & 0xFF == ord('q'):
         break
 
+    
+    if ret:
+        key = cv2.waitKey(50)
+            
+            # Check if the 'w' key is pressed (ASCII code for 'w' is 119)
+        if key == 119:
+            cv2.imwrite('photo.jpg', frame)
+            print('Photo taken!')
+            
+            
 cap.release()
 cv2.destroyAllWindows()
