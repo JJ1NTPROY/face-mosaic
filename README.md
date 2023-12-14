@@ -23,7 +23,7 @@ pip install opencv-python
 ## 사용법
 
 1. **프로젝트 다운로드:**
-   - [프로젝트 다운로드 링크](프로젝트 GitHub 링크)에서 "Download ZIP"을 클릭하여 프로젝트를 다운로드합니다.
+   - [프로젝트 다운로드 링크](https://github.com/JJ1NTPROY/face-mosaic)에서 "Download ZIP"을 클릭하여 프로젝트를 다운로드합니다.
 
 2. **프로젝트 압축 해제:**
    - 다운로드한 ZIP 파일을 원하는 디렉토리로 이동하여 압축을 해제합니다.
