@@ -1,13 +1,13 @@
-# 프로젝트 개요
+# Project outline
 
-이 프로젝트는 Python과 OpenCV를 활용하여 사람 얼굴을 감지하고 해당 얼굴 부분을 모자이크 처리하는 오픈소스 소프트웨어입니다. 얼굴 모자이크는 사용자의 프라이버시 보호와 이미지 처리 기술을 결합하여 얼굴을 인식할 수 없게 만들어줍니다.
+This project is an open-source software that uses Python and OpenCV to detect a person's face and mosaic the face part. We tried to create a program that mosaic pictures by looking at the mosaic pictures attached to the wall of the dormitory, and it combines privacy protection and image processing technology by recording videos and taking pictures of people.
 
 ## 조 구성
 
-* 202334425 김대원
-* 202334511 이우정
-* 202334514 이은주
-* 202334496 유진규
+* 202334425 김대원: take the picture, fice-mosaic.py, managing repository
+* 202334511 이우정: mosaic pic.py
+* 202334514 이은주: video.py
+* 202334496 유진규: person detection
 
 ## 사용한 패키지 및 버전
 
@@ -20,31 +20,15 @@
 pip install opencv-python
 ```
 
-## 사용법
+## Code Description and Ouput
 
-1. **프로젝트 다운로드:**
-   - [프로젝트 다운로드 링크](https://github.com/JJ1NTPROY/face-mosaic)에서 "Download ZIP"을 클릭하여 프로젝트를 다운로드합니다.
 
-2. **프로젝트 압축 해제:**
-   - 다운로드한 ZIP 파일을 원하는 디렉토리로 이동하여 압축을 해제합니다.
+1. **code despription:**
+-Haar classifiers, classifiers that were used in the first real-time face detector.
+https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
+-mosaic picture
 
-3. **Python 및 OpenCV 설치:**
-   - Python이 설치되어 있지 않다면 [Python 공식 웹사이트](https://www.python.org/downloads/)에서 다운로드하고 설치합니다.
-   - 터미널 또는 명령 프롬프트에서 다음 명령어를 입력하여 OpenCV를 설치합니다.
-     ```bash
-     pip install opencv-python
-     ```
-
-4. **이미지 모자이크 실행:**
-   - 압축 해제한 프로젝트 디렉토리로 이동합니다.
-   - 터미널 또는 명령 프롬프트에서 다음 명령어를 입력하여 이미지 모자이크를 실행합니다.
-     ```bash
-     python face_mosaic.py --input input_image.jpg --output output_image.jpg
-     ```
-   - `--input` 옵션으로 사용하고자 하는 이미지 파일 경로를 지정합니다.
-   - `--output` 옵션으로 결과 이미지 파일을 저장할 경로를 지정합니다.
-
-5. **결과 확인:**
+3. **Output:**
    - 처리된 이미지는 `output_image.jpg`로 저장됩니다.
 
 프로젝트는 사람 얼굴 모자이크 처리를 위한 간단하면서 효과적인 도구를 제공하며, 사용자들에게 얼굴 인식 기술에 대한 인식과 프라이버시 보호의 중요성을 강조합니다.
